@@ -24,15 +24,15 @@ const PROJECTS: Project[] = [
     category: 'Client · Bitis',
     name: 'Reels',
     col1Top: {
-      filename: 'project-01-reels-col1-top.mp4',
+      filename: 'project-01-reels-col1-top.png',
       label: 'Bitis Reels · Col 1 Top',
     },
     col1Bottom: {
-      filename: 'project-01-reels-col1-bottom.mp4',
+      filename: 'project-01-reels-col1-bottom.png',
       label: 'Bitis Reels · Col 1 Bottom',
     },
     col2: {
-      filename: 'project-01-reels-col2.mp4',
+      filename: 'project-01-reels-col2.gif',
       label: 'Bitis Reels · Hero',
     },
   },
@@ -41,15 +41,15 @@ const PROJECTS: Project[] = [
     category: 'Client · VFIS School',
     name: 'TVC',
     col1Top: {
-      filename: 'project-02-tvc-col1-top.mp4',
+      filename: 'project-02-tvc-col1-top.png',
       label: 'VFIS TVC · Col 1 Top',
     },
     col1Bottom: {
-      filename: 'project-02-tvc-col1-bottom.mp4',
+      filename: 'project-02-tvc-col1-bottom.png',
       label: 'VFIS TVC · Col 1 Bottom',
     },
     col2: {
-      filename: 'project-02-tvc-col2.mp4',
+      filename: 'project-02-tvc-col2.gif',
       label: 'VFIS TVC · Hero',
     },
   },
@@ -58,15 +58,15 @@ const PROJECTS: Project[] = [
     category: 'Client · CEE TEAM',
     name: 'MV — Tết Là Nhà',
     col1Top: {
-      filename: 'project-03-mv-col1-top.mp4',
+      filename: 'project-03-mv-col1-top.png',
       label: 'Tết Là Nhà MV · Col 1 Top',
     },
     col1Bottom: {
-      filename: 'project-03-mv-col1-bottom.mp4',
+      filename: 'project-03-mv-col1-bottom.png',
       label: 'Tết Là Nhà MV · Col 1 Bottom',
     },
     col2: {
-      filename: 'project-03-mv-col2.mp4',
+      filename: 'project-03-mv-col2.gif',
       label: 'Tết Là Nhà MV · Hero',
     },
   },

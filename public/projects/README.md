@@ -1,14 +1,11 @@
 # Project Media Slots
 
-Drop your project video/image files into this folder using **exactly** these filenames.
-Until the file exists, the site shows a dashed placeholder with the expected filename.
+Each project card has 3 media slots:
+- **Col 1 Top** + **Col 1 Bottom** → static **PNG images**
+- **Col 2 (Hero, right side, full height)** → animated **GIF**
 
-Supported types:
-- Videos: `.mp4` / `.webm` / `.mov` / `.m4v` (autoplay, loop, muted) — recommended for these projects
-- Images: `.png` / `.jpg` / `.jpeg` / `.gif` / `.webp`
-
-If you want a different file extension (e.g. swap an `.mp4` for `.png`),
-edit the matching `filename` field in `src/sections/ProjectsSection.tsx`.
+Drop your files into this folder with **exactly** these filenames.
+Until a file exists, the site shows a dashed placeholder with the expected filename.
 
 ---
 
@@ -16,33 +13,47 @@ edit the matching `filename` field in `src/sections/ProjectsSection.tsx`.
 
 Includes work for Bitis, Bitis Kids, Bitis Hunter, Bitis Gosto.
 
-| Filename                                | Position                       |
-| --------------------------------------- | ------------------------------ |
-| `project-01-reels-col1-top.mp4`         | Left column, top (small)       |
-| `project-01-reels-col1-bottom.mp4`      | Left column, bottom (medium)   |
-| `project-01-reels-col2.mp4`             | Right column, full tall hero   |
+| Filename                                | Type | Position                       |
+| --------------------------------------- | ---- | ------------------------------ |
+| `project-01-reels-col1-top.png`         | PNG  | Left column, top (small)       |
+| `project-01-reels-col1-bottom.png`      | PNG  | Left column, bottom (medium)   |
+| `project-01-reels-col2.gif`             | GIF  | Right column, full tall hero   |
 
 ## Project 02 — TVC (Client · VFIS School)
 
-| Filename                                | Position                       |
-| --------------------------------------- | ------------------------------ |
-| `project-02-tvc-col1-top.mp4`           | Left column, top (small)       |
-| `project-02-tvc-col1-bottom.mp4`        | Left column, bottom (medium)   |
-| `project-02-tvc-col2.mp4`               | Right column, full tall hero   |
+| Filename                                | Type | Position                       |
+| --------------------------------------- | ---- | ------------------------------ |
+| `project-02-tvc-col1-top.png`           | PNG  | Left column, top (small)       |
+| `project-02-tvc-col1-bottom.png`        | PNG  | Left column, bottom (medium)   |
+| `project-02-tvc-col2.gif`               | GIF  | Right column, full tall hero   |
 
 ## Project 03 — MV "Tết Là Nhà" (Client · CEE TEAM)
 
-| Filename                                | Position                       |
-| --------------------------------------- | ------------------------------ |
-| `project-03-mv-col1-top.mp4`            | Left column, top (small)       |
-| `project-03-mv-col1-bottom.mp4`         | Left column, bottom (medium)   |
-| `project-03-mv-col2.mp4`                | Right column, full tall hero   |
+| Filename                                | Type | Position                       |
+| --------------------------------------- | ---- | ------------------------------ |
+| `project-03-mv-col1-top.png`            | PNG  | Left column, top (small)       |
+| `project-03-mv-col1-bottom.png`         | PNG  | Left column, bottom (medium)   |
+| `project-03-mv-col2.gif`                | GIF  | Right column, full tall hero   |
 
 ---
 
-## Notes
+## Specs & tips
 
-- Files in `public/` are served at the site root, no build step needed — drop file in and refresh.
-- For videos, keep them short (< 10 MB) and use H.264 `.mp4` for max compatibility.
-- For images, ~1200–1600 px on the long edge keeps load fast.
-- Vercel free tier: 100 GB bandwidth/month — keep media sizes reasonable.
+**PNG images (col1 top + bottom):**
+- ~1200–1600 px on the long edge
+- Crop tight to the subject — the slot is short and wide
+- Under ~500 KB each after compression (use TinyPNG / Squoosh)
+
+**GIF hero (col2):**
+- Tall portrait-ish crop preferred (slot is the full card height, ~60% width)
+- 3–6 seconds, looping
+- **Keep under ~3 MB** — GIFs balloon fast. Use https://ezgif.com/optimize to compress
+- 480p (~720 × 1080) is usually plenty; the slot rarely renders above 600px wide
+- Reduce frame rate to 15–20 fps if file size is tight
+
+**Want a different format for any slot?** Edit `src/sections/ProjectsSection.tsx`
+— each slot has its own `filename` field. You can swap `.gif` → `.mp4` or
+`.png` → `.webp` per slot. MediaSlot auto-detects video vs image.
+
+**Vercel bandwidth note:** free tier = 100 GB/month. 9 project files at
+~3 MB each = ~27 MB total — totally fine.
