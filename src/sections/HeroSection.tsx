@@ -37,8 +37,8 @@ export function HeroSection() {
         >
           <FadeIn delay={0.6} y={30}>
             <img
-              src="https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png"
-              alt="Jack portrait"
+              src={`${import.meta.env.BASE_URL}hero-portrait.png`}
+              alt="Trương Quang Nhật portrait"
               className="w-full h-auto select-none pointer-events-none"
               draggable={false}
             />
