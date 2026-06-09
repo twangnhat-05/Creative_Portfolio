@@ -9,39 +9,40 @@ type Service = {
 const SERVICES: Service[] = [
   {
     number: '01',
-    name: '3D Modeling',
+    name: 'VFX',
     description:
-      'Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.',
+      'Visual effects and compositing that elevate footage into cinematic moments — green screen, simulations, and seamless integration of practical and digital elements.',
   },
   {
     number: '02',
-    name: 'Rendering',
+    name: '3D & CGI',
     description:
-      'High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.',
+      'Photoreal 3D models and CGI assets integrated into live action, bringing impossible shots and stylized worlds to life.',
   },
   {
     number: '03',
-    name: 'Motion Design',
+    name: 'Motion Graphics',
     description:
-      'Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.',
+      'Title sequences, kinetic typography, and animated graphics built in After Effects that add energy and storytelling to every cut.',
   },
   {
     number: '04',
-    name: 'Branding',
+    name: 'Color Grading',
     description:
-      'Crafting cohesive visual identities -- from logos to full brand systems -- that communicate a clear and memorable presence.',
+      'Cinematic color work in DaVinci Resolve — mood, tone, and consistency dialed in across every frame and every shot.',
   },
   {
     number: '05',
-    name: 'Web Design',
+    name: 'Video Editing',
     description:
-      'Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience.',
+      'Story-first editing in Premiere Pro for reels, TVCs, and music videos with rhythm, pacing, and emotion at the core.',
   },
 ];
 
 export function ServicesSection() {
   return (
     <section
+      id="services"
       className="rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
       style={{ background: '#FFFFFF', color: '#0C0C0C' }}
     >

@@ -3,15 +3,22 @@ import { useState } from 'react';
 type MediaSlotProps = {
   filename: string;
   label: string;
+  folder?: string;
   className?: string;
   style?: React.CSSProperties;
 };
 
 const VIDEO_EXT = /\.(mp4|webm|mov|m4v)$/i;
 
-export function MediaSlot({ filename, label, className, style }: MediaSlotProps) {
+export function MediaSlot({
+  filename,
+  label,
+  folder = 'projects',
+  className,
+  style,
+}: MediaSlotProps) {
   const [errored, setErrored] = useState(false);
-  const src = `${import.meta.env.BASE_URL}projects/${filename}`;
+  const src = `${import.meta.env.BASE_URL}${folder}/${filename}`;
   const isVideo = VIDEO_EXT.test(filename);
 
   if (errored) {

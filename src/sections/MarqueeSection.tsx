@@ -1,31 +1,28 @@
 import { useEffect, useRef, useState } from 'react';
+import { MediaSlot } from '../components/MediaSlot';
 
-const IMAGES = [
-  'https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif',
-  'https://motionsites.ai/assets/hero-codenest-preview-Cgppc2qV.gif',
-  'https://motionsites.ai/assets/hero-vex-ventures-preview-BczMFIiw.gif',
-  'https://motionsites.ai/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif',
-  'https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif',
-  'https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif',
-  'https://motionsites.ai/assets/hero-vitara-preview-Cjz2QYyU.gif',
-  'https://motionsites.ai/assets/hero-terra-preview-BFjrCr7T.gif',
-  'https://motionsites.ai/assets/hero-skyelite-preview-DHaZIgUv.gif',
-  'https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif',
-  'https://motionsites.ai/assets/hero-designpro-preview-D8c5_een.gif',
-  'https://motionsites.ai/assets/hero-stellar-ai-preview-D3HL6bw1.gif',
-  'https://motionsites.ai/assets/hero-xportfolio-preview-D4A8maiC.gif',
-  'https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif',
-  'https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif',
-  'https://motionsites.ai/assets/hero-evr-ventures-preview-DZxeVFEX.gif',
-  'https://motionsites.ai/assets/hero-planet-orbit-preview-DWAP8Z1P.gif',
-  'https://motionsites.ai/assets/hero-new-era-preview-CocuDUm9.gif',
-  'https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif',
-  'https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif',
-  'https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif',
+type MarqueeItem = {
+  filename: string;
+  label: string;
+};
+
+const ROW_1: MarqueeItem[] = [
+  { filename: 'marquee-bitis-reel.mp4', label: 'Bitis Reel' },
+  { filename: 'marquee-bitis-kids.mp4', label: 'Bitis Kids Reel' },
+  { filename: 'marquee-bitis-hunter.mp4', label: 'Bitis Hunter Reel' },
+  { filename: 'marquee-bitis-gosto.mp4', label: 'Bitis Gosto Reel' },
+  { filename: 'marquee-vfis-tvc.mp4', label: 'VFIS School TVC' },
+  { filename: 'marquee-cee-mv.mp4', label: 'Tet La Nha — CEE TEAM MV' },
 ];
 
-const ROW_1 = IMAGES.slice(0, 11);
-const ROW_2 = IMAGES.slice(11);
+const ROW_2: MarqueeItem[] = [
+  { filename: 'marquee-vfx-01.mp4', label: 'VFX Showcase 01' },
+  { filename: 'marquee-vfx-02.mp4', label: 'VFX Showcase 02' },
+  { filename: 'marquee-cgi-01.mp4', label: 'CGI Showcase 01' },
+  { filename: 'marquee-cgi-02.mp4', label: 'CGI Showcase 02' },
+  { filename: 'marquee-motion-01.mp4', label: 'Motion Showcase 01' },
+  { filename: 'marquee-motion-02.mp4', label: 'Motion Showcase 02' },
+];
 
 const ROW_1_TRIPLED = [...ROW_1, ...ROW_1, ...ROW_1];
 const ROW_2_TRIPLED = [...ROW_2, ...ROW_2, ...ROW_2];
@@ -39,8 +36,7 @@ export function MarqueeSection() {
       const el = sectionRef.current;
       if (!el) return;
       const sectionTop = el.getBoundingClientRect().top + window.scrollY;
-      const next =
-        (window.scrollY - sectionTop + window.innerHeight) * 0.3;
+      const next = (window.scrollY - sectionTop + window.innerHeight) * 0.3;
       setOffset(next);
     };
 
@@ -52,6 +48,9 @@ export function MarqueeSection() {
   const translateRight = offset - 200;
   const translateLeft = -(offset - 200);
 
+  const tileClass = 'rounded-2xl object-cover shrink-0';
+  const tileStyle = { width: 420, height: 270 };
+
   return (
     <section
       ref={sectionRef}
@@ -59,27 +58,33 @@ export function MarqueeSection() {
       style={{ background: '#0C0C0C' }}
     >
       <div className="flex flex-col gap-3">
-        <div className="flex gap-3" style={{ willChange: 'transform', transform: `translateX(${translateRight}px)` }}>
-          {ROW_1_TRIPLED.map((src, i) => (
-            <img
+        <div
+          className="flex gap-3"
+          style={{ willChange: 'transform', transform: `translateX(${translateRight}px)` }}
+        >
+          {ROW_1_TRIPLED.map((item, i) => (
+            <MediaSlot
               key={`r1-${i}`}
-              src={src}
-              alt=""
-              loading="lazy"
-              className="rounded-2xl object-cover shrink-0"
-              style={{ width: 420, height: 270 }}
+              folder="marquee"
+              filename={item.filename}
+              label={item.label}
+              className={tileClass}
+              style={tileStyle}
             />
           ))}
         </div>
-        <div className="flex gap-3" style={{ willChange: 'transform', transform: `translateX(${translateLeft}px)` }}>
-          {ROW_2_TRIPLED.map((src, i) => (
-            <img
+        <div
+          className="flex gap-3"
+          style={{ willChange: 'transform', transform: `translateX(${translateLeft}px)` }}
+        >
+          {ROW_2_TRIPLED.map((item, i) => (
+            <MediaSlot
               key={`r2-${i}`}
-              src={src}
-              alt=""
-              loading="lazy"
-              className="rounded-2xl object-cover shrink-0"
-              style={{ width: 420, height: 270 }}
+              folder="marquee"
+              filename={item.filename}
+              label={item.label}
+              className={tileClass}
+              style={tileStyle}
             />
           ))}
         </div>

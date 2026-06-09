@@ -3,7 +3,7 @@ import { ContactButton } from '../components/ContactButton';
 import { AnimatedText } from '../components/AnimatedText';
 
 const ABOUT_TEXT =
-  "With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!";
+  "With 3+ years of experience as a video editor, i specialize in vfx, 3d, and cgi work — crafting reels, tvcs, and music videos in premiere pro, davinci resolve, and after effects. Let's build something incredible together!";
 
 export function AboutSection() {
   return (

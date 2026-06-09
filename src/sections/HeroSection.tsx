@@ -2,7 +2,7 @@ import { FadeIn } from '../components/FadeIn';
 import { ContactButton } from '../components/ContactButton';
 import { Magnet } from '../components/Magnet';
 
-const NAV_LINKS = ['About', 'Price', 'Projects', 'Contact'];
+const NAV_LINKS = ['About', 'Services', 'Projects', 'Contact'];
 
 export function HeroSection() {
   return (
@@ -48,7 +48,7 @@ export function HeroSection() {
         <div className="relative z-20 overflow-hidden">
           <FadeIn delay={0.15} y={40}>
             <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw] mt-6 sm:mt-4 md:-mt-5 px-6 md:px-10">
-              Hi, i&apos;m jack
+              Hi, i&apos;m nhật
             </h1>
           </FadeIn>
         </div>
@@ -59,7 +59,7 @@ export function HeroSection() {
               className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px]"
               style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
             >
-              a 3d creator driven by crafting striking and unforgettable projects
+              a video editor crafting cinematic vfx, 3d, and cgi for brands and storytellers
             </p>
           </FadeIn>
           <FadeIn delay={0.5} y={20}>
