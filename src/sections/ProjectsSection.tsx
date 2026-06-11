@@ -58,7 +58,7 @@ const PROJECTS: Project[] = [
     category: 'Client · CEE TEAM',
     name: 'MV — Tết Là Nhà',
     col1Top: {
-      filename: 'project-03-mv-col1-top.png',
+      filename: 'project-03-mv-col1-top.jpg',
       label: 'Tết Là Nhà MV · Col 1 Top',
     },
     col1Bottom: {
@@ -66,7 +66,7 @@ const PROJECTS: Project[] = [
       label: 'Tết Là Nhà MV · Col 1 Bottom',
     },
     col2: {
-      filename: 'project-03-mv-col2.gif',
+      filename: 'project-03-mv-col2.mp4',
       label: 'Tết Là Nhà MV · Hero',
     },
   },
