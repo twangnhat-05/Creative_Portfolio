@@ -81,11 +81,12 @@ type ProjectCardProps = {
 };
 
 function ProjectCard({ project, index, totalCards, progress, range }: ProjectCardProps) {
-  const targetScale = 1 - (totalCards - 1 - index) * 0.03;
+  const targetScale = 1 - (totalCards - 1 - index) * 0.02;
   const scale = useTransform(progress, range, [1, targetScale]);
+  const stickyTop = 80 + index * 80;
 
   return (
-    <div className="sticky top-24 md:top-32" style={{ top: `${index * 28}px` }}>
+    <div className="sticky" style={{ top: `${stickyTop}px` }}>
       <motion.div
         style={{ scale, background: '#0C0C0C' }}
         className="border-2 border-[#D7E2EA] rounded-[40px] sm:rounded-[50px] md:rounded-[60px] p-4 sm:p-6 md:p-8 origin-top"
