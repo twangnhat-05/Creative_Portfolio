@@ -49,7 +49,7 @@ const PROJECTS: Project[] = [
       label: 'VFIS TVC · Col 1 Bottom',
     },
     col2: {
-      filename: 'project-02-tvc-col2.gif',
+      filename: 'project-02-tvc-col2.mp4',
       label: 'VFIS TVC · Hero',
     },
   },
